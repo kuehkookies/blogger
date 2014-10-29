@@ -26,14 +26,31 @@ class ArticlesController < ApplicationController
 		# Posting article with parameter designed in ArticlesHelper
 		@article = Article.new(article_params)
 
+		flash.notice = "Article '#{@article.title}' saved!"
+		
 		@article.save
+		redirect_to article_path(@article)
+	end
+
+	def edit
+		@article = Article.find(params[:id])
+	end
+
+	def update
+		@article = Article.find(params[:id])
+		@article.update_attributes(article_params)
+
+		flash.notice = "Article '#{@article.title}' updated!"
+
 		redirect_to article_path(@article)
 	end
 
 	def destroy
 		@article = Article.find(params[:id])
+		
+		flash.notice = "Article '#{@article.title}' deleted!"
+		
 		@article.destroy
-
 		redirect_to article_path(@article)
 	end
 end
