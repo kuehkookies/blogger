@@ -10,6 +10,8 @@ gem 'sqlite3'
 # gems for allowing strong parameters to be worked
 gem 'strong_parameters'
 
+gem 'carrierwave'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
