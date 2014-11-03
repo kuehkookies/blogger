@@ -11,6 +11,7 @@ gem 'sqlite3'
 gem 'strong_parameters'
 
 gem 'carrierwave'
+gem 'sorcery'
 
 
 # Gems used only for assets and not required
